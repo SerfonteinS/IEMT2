@@ -1,12 +1,12 @@
+import requests
+from bs4 import BeautifulSoup
+
 if __name__ == '__main__':
     
     # Hello there
     #!/
 
     print("Testing VS Code.")
-
-    import requests
-    from bs4 import BeautifulSoup
 
     my_file = open("requirements.txt", "w")
 
