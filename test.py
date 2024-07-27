@@ -41,6 +41,11 @@ if __name__=='__main__':
             
     dafile.close()
     finalfile.close()
+    
+    diefile = open("requirements.txt", "a")
+    diefile.write("beautifulsoup4\n")
+    diefile.write("requests\n")
+    diefile.close()
 
     the_file = open("requirements.txt", "r")
     for row in the_file:

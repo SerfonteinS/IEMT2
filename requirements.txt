@@ -8,3 +8,5 @@ REGIONS:
 7. Amatole Mountains
 8. Friendly N6
 9. Wild Coast
+beautifulsoup4
+requests
