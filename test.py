@@ -1,50 +1,53 @@
 # Hello there
+#!/
 
-print("Testing VS Code.")
+if __name__=='__main__':
 
-import requests
-from bs4 import BeautifulSoup
+    print("Testing VS Code.")
 
-my_file = open("requirements.txt", "w")
+    import requests
+    from bs4 import BeautifulSoup
 
-url = "https://visiteasterncape.co.za/iconic-eastern-cape/"
-page = requests.get(url)
+    my_file = open("requirements.txt", "w")
 
-soup = BeautifulSoup(page.content, "html.parser")
+    url = "https://visiteasterncape.co.za/iconic-eastern-cape/"
+    page = requests.get(url)
 
-print()
-region_heading = soup.find('h3', class_='elementor-heading-title elementor-size-default')
-my_file.write(region_heading.string)
-print()
+    soup = BeautifulSoup(page.content, "html.parser")
 
-my_file.close()
+    print()
+    region_heading = soup.find('h3', class_='elementor-heading-title elementor-size-default')
+    my_file.write(region_heading.string)
+    print()
 
-a_file = open("requirements_initial.txt", "a")
+    my_file.close()
 
-regions_sa = soup.find('div', class_='elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7579cdf')
-for regionsa in regions_sa:
-    #print(regionsa.get_text())
-    #a_file.write(regionsa.text)
-    a_file.write(regionsa.text)
+    a_file = open("requirements_initial.txt", "a")
+
+    regions_sa = soup.find('div', class_='elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7579cdf')
+    for regionsa in regions_sa:
+        #print(regionsa.get_text())
+        #a_file.write(regionsa.text)
+        a_file.write(regionsa.text)
     
-a_file.close()
+    a_file.close()
 
-finalfile = open("requirements.txt", "r+")
+    finalfile = open("requirements.txt", "r+")
 
-with open("requirements_initial.txt", "r+") as dafile:
-    for line in dafile:
-        if not line.isspace():
-            finalfile.write(line) 
+    with open("requirements_initial.txt", "r+") as dafile:
+        for line in dafile:
+            if not line.isspace():
+                finalfile.write(line) 
             
-dafile.close()
-finalfile.close()
+    dafile.close()
+    finalfile.close()
 
-the_file = open("requirements.txt", "r")
-for row in the_file:
-       print(row) 
-the_file.close()
+    the_file = open("requirements.txt", "r")
+    for row in the_file:
+        print(row) 
+    the_file.close()
 
-# print(page.text)
+    # print(page.text)
 
 
 
