@@ -1,7 +1,7 @@
-# Hello there
-#!/
-
 if __name__=='__main__':
+    
+    # Hello there
+    #!/
 
     print("Testing VS Code.")
 
