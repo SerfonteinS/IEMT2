@@ -8,7 +8,7 @@ if __name__ == '__main__':
 
     print("Testing VS Code.")
 
-    my_file = open("requirements.txt", "w")
+    my_file = open("data_extract.txt", "w")
 
     url = "https://visiteasterncape.co.za/iconic-eastern-cape/"
     page = requests.get(url)
@@ -16,13 +16,13 @@ if __name__ == '__main__':
     soup = BeautifulSoup(page.content, "html.parser")
 
     print()
-    region_heading = soup.find('h3', class_='elementor-heading-title elementor-size-default')
-    my_file.write(region_heading.string)
+    #region_heading = soup.find('h3', class_='elementor-heading-title elementor-size-default')
+    #my_file.write(region_heading.string)
     print()
 
     my_file.close()
 
-    a_file = open("requirements_initial.txt", "a")
+    a_file = open("data_extract.txt", "a")
 
     regions_sa = soup.find('div', class_='elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7579cdf')
     for regionsa in regions_sa:
@@ -32,9 +32,9 @@ if __name__ == '__main__':
     
     a_file.close()
 
-    finalfile = open("requirements.txt", "r+")
+    finalfile = open("some_data.txt", "w+")
 
-    with open("requirements_initial.txt", "r+") as dafile:
+    with open("data_extract.txt", "r+") as dafile:
         for line in dafile:
             if not line.isspace():
                 finalfile.write(line) 
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     dafile.close()
     finalfile.close()
     
-    diefile = open("requirements.txt", "a")
+    diefile = open("requirements.txt", "w")
     diefile.write("beautifulsoup4\n")
     diefile.write("requests\n")
     diefile.close()
