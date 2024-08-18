@@ -47,7 +47,7 @@ if __name__ == '__main__':
     diefile.write("requests\n")
     diefile.close()
 
-    the_file = open("requirements.txt", "r")
+    the_file = open("some_data.txt", "r")
     for row in the_file:
         print(row) 
     the_file.close()
